@@ -1,0 +1,117 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Bouncing Balls</div>
+
+<div id="csContent"> 
+<h1>Greenfoot Environment</h1>
+  <p>Before we start this lesson I need to clarify three things about the Greenfoot environment.</p>
+  <ol id="csList">
+  <li><p>A Greenfoot world is a two-dimensional coordinate plane. The origin(0,0) is located in the top left corner. The illustration below shows the organization of points 
+    for a world with dimensions (600 x 400).</p></li>
+     <div><img src="greenfoot/images/BounceBall_02.png"></div>
+
+<li><p>Most Actors in Greenfoot have an image or icon associated with them that is displayed when the Actor
+is added to a world. Regardless of the shape of an Actor its image is always rectangular in shape. Each image has
+width and height attributes that describe the dimensions of the image.</p></li>
+<div><img src="greenfoot/images/BounceBall_01.png"></div>
+<li><p>An Actor's location within a world is calculated from its center. The two Actor methods <strong>getX</strong> and <strong>getY</strong> return the location of an Actor's center 
+   position within a world.</p></li>
+  </ol>
+  
+<h1>Download and Open Scenario</h1>
+<ol id="csList">
+<li><p>Click on the following link to download the Scenario: <a href="greenfoot/scenarios/Bouncing Balls.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >Bouncing Balls</a></p></li>
+<li><p>Select <strong>Open</strong>.</p></li>
+<li><p>Copy the folder <strong>Bouncing Balls</strong> and paste it in your <strong>MyGreenfoot</strong> folder.</p></li>
+<li><p>Launch Greenfoot and select Open from the Scenario menu.</p></li>
+<li><p>Navigate to your MyGreenfoot folder, select the Bouncing Balls Scenario, and click Open.</p></li>
+</ol> 
+  
+  <h1>Ball1 Class</h1>
+<p>Add a Ball1 object to the world and run the program. Notice that when the ball reaches the right edge of the world it stops moving.</p>
+<p>Click on the MyWorld class to view its code. Modify the MyWorld constructor so the code looks like the following:</p>
+<div><img src="greenfoot/images/BounceBall_03.png"></div>
+<p>Now add another Ball1 object to the world and run the program again. Notice that the ball does not stop when it reaches the edge of the world.
+   By default worlds are created with restrictive boundaries. This means Actors added to a world can not move outside the world's boundaries. By adding <strong>false</strong> to the end of
+   the super command you are turning off this feature making Actor movements no longer restricted to the world's boundaries.</p>
+   <p>Click on the Ball1 class to view its code. Add the following code to its <strong>act</strong> method.</p>
+   <div id="csCode" style="width:625px"><pre>
+if(isAtEdge())
+{
+   turn(180);   // turn around
+}
+</pre></div>
+
+<p>Add a Ball1 object and run program again. The ball bounces off the wall when it reaches the world's edge. Notice, however, that the ball does not bounce exactly at the edge. This is because the ball's position is
+   determined according to the location of its center. We will fix this problem in the next section.</p>
+   <div><img src="greenfoot/images/BounceBall_04.png"></div>
+   
+<h1>Ball2 Class</h1>
+<p>Add a Ball2 object to the world and run the program again. Now click on the Ball2 class to view its code.</p>
+<p>In the Ball1 class we used the <strong>move</strong> and <strong>setRotation</strong> methods to control the ball's movement. The drawback to using this technique is that it requires advanced math
+   to calculate reflection angles when you want to bounce a ball off of a wall at an angle.</p>
+<p>So in the Ball2 class we use the <strong>setLocation</strong> method to update the ball's position.</p>
+<div id="csCode" style="width:625px"><pre>setLocation(getX() + <div id="csHighlight"><pre>vx</pre></div>, getY());</pre></div>
+<p>To move the ball we get the ball's current location using <strong>getX</strong> and then increase that value by <strong>vx</strong> which has a value of 3. This moves the ball 3 units to the right. The setLocation method
+   requires two parameters, both an x and y value, so for the y value we just set it to value returned by <strong>getY</strong> which is the ball's current vertical position.</p>
+<p>In the Ball1 example the ball did not bounce off the walls correctly. We fix this problem in this example by adding a variable named <strong>ballRadius.</strong></p>
+ <div id="csCode" style="width:625px"><pre>int ballRadius = getImage().getWidth() / 2;</pre></div>
+<p>The <strong>getImage</strong> method is an Actor method that gives you access to an Actor's image. Once we have a reference to the image we then call the GreenfootImage class's <strong>getWidth</strong> method 
+   that returns the width of the image. Dividing this value by 2 gives us half the width of the image. In the act method we use this value to calculate the left and right edges of the ball so we can make 
+   the ball bounce off the wall correctly.</p>
+<p>Notice the use of the following code:</p>
+<div id="csCode" style="width:625px"><pre>getWorld().getWidth()</pre></div>
+<p>The <strong>getWorld</strong> method is an Actor method that gives the Ball2 class access to the world it belongs. With a reference to its world it can call the World method <strong>getWidth</strong> that returns the width of the world.</p>
+<br><hr>
+<h1>Program Modifications</h1>
+<p>Study the code for the Ball2 class to make sure you understand how it works then modify the Ball2 class so that the ball bounces off of all four edges(walls).</p>
+<ol id="csList">
+<li><p>Add an integer variable named <strong>vy</strong> to the Ball2 class and assign it a value of 3. This variable represents the ball's vertical velocity.</p></li>
+<li><p>Modify the <strong>setLocation</strong> method called in the act method so that the Ball's vertical postion is increased by vy. The setLocation method
+       should look like the following when completed:</p>
+	   <div id="csCode"><pre>setLocation(getX() + vx, getY() + <div id="csHighlight"><pre>vy</pre></div>);</pre></div></li>
+<li><p>Add two if statements to the act method that are used to determine when the ball reaches the top and bottom edges of the world.</p>
+<p>When checking a ball's vertical position use <strong>getHeight</strong> instead of getWidth.</p>
+<p>When the ball reaches the top or bottom of the world the ball's vertical velocity should be inverted (flipped from positive to negative or negative to positive).</p></li>
+<li><p>Add a Ball2 object to the world and run the program.</p></li>
+<li><p>Add several more Ball2 objects to the world and run the program again. Notice that the balls all go in the same direction.</p></li>
+</ol>
+<p>Modify the program so the balls can move in different directions.</p>
+<ol id="csList" start="6">
+
+
+<li><p>Add the following code to the Ball2 class above the act method.</p></li>
+<div id="csCode" style="width:600px"><pre>
+public Ball2(int x_velocity, int y_velocity)
+{
+    vx = x_velocity;
+    vy = y_velocity;
+}</pre></div>
+<p>The code above is called a <strong>constructor</strong>. A constructor is a special method that's name is the same as the class to which it belongs. This constructor is named Ball2 because it is 
+   a constructor for the Ball2 class. The main job of a constructor is to give initial values to an object's instance variables.</p>
+<li><p>Add the following code to the MyWorld constructor:</p></li>
+<div id="csCode" style="width:600px"><pre>
+Ball2 ball1 = new Ball2(3, 3);       // vx = 3, vy = 3
+Ball2 ball2 = new Ball2(4, -2);      // vx = 4, vy = -2
+Ball2 ball3 = new Ball2(-2, 4);      // vx = -2, vy = 4
+        
+addObject(ball1, 200, 300);
+addObject(ball2, 300, 200);
+addObject(ball3, 100, 100);</pre></div>
+
+<p>The code above creates three Ball2 objects. The code uses the <strong>constructor</strong> we made for the Ball2 class. By using this constructor we are able to assign each Ball2 object
+   a different horizontal(vx) and vertical(vy) velocity. For example, ball1 is assigned a horizontal velocity of 3 and a vertical velocity of 3.</p>
+
+<div id="csCode" style="width:600px"><pre>
+Ball2 ball1 = new <div id="csHighlight"><pre>Ball2(3, 3)</pre></div>;       // constructor call </pre></div>
+<p>The code then adds all three Ball2 objects to the world at different locations.</p>
+<p>The MyWorld constructor should look like the following:</p>
+<div><img src="greenfoot/images/BounceBall_05.png"></div>
+
+<li><p>Add two more Ball2 objects to the world at different locations.</p></li>
+<li><p>Compile and execute the program.</p></li>
+</ol>
+
+	<br>
+</div>	
+

@@ -1,0 +1,102 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Fish</div>
+
+<div id="csContent"> 
+<h1>Download and Open Scenario</h1>
+<ol id="csList">
+<li><p>Click on the following link to download the Scenario: <a href="greenfoot/scenarios/Fish.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >Fish</a></p></li>
+<li><p>Select <strong>Open</strong>.</p></li>
+<li><p>Copy the folder <strong>Fish</strong> and paste it in your <strong>MyGreenfoot</strong> folder.</p></li>
+<li><p>Launch Greenfoot and select Open from the Scenario menu.</p></li>
+<li><p>Navigate to your MyGreenfoot folder, select the Fish Scenario, and click Open.</p></li>
+</ol>
+
+<h1>Fish class</h1>
+<p>The purpose of the <strong>Fish</strong> class is demonstrate how to check for keyboard events in a program. </p>
+
+<ol id="csList">
+<li><p>Select Greenfoot Class Documentation from the Help menu. Review the documentation for the <strong>Greenfoot</strong> class. Look for methods that can be used with keyboard input.</p></li>
+<li><p>Go back to the Greenfoot environment. Compile and run the Fish Scenario. While the program is running press the left and right arrow keys. 
+<p>The act method uses the Greenfoot method <strong>isKeyDown</strong> to check for keyboard input.</p>
+<li><p>Click on the fish. What happens?</p></li>
+<p>Look at the following code:</p>
+<div id="csCode" style="width:625px"><pre>
+if(Greenfoot.mouseClicked(<div id="csHighlight"><pre>this</pre></div>))
+{
+    getImage().mirrorHorizontally();              // flip image horizontally
+}
+</pre></div>
+<p>Notice the use of the Java keyword <strong>this</strong>. The <strong>this</strong> keyword is important in Java because it allows a class to refer to itself.
+The code is basically saying "if the mouse was clicked on a Fish flip its image".</p>
+</ol>
+
+<br><hr>
+
+<h1>Program Modifications</h1>
+<ol id = "csList">
+<li><p>Add code to the Fish class so that a fish can move up and down when the up and down arrow keys are pressed.</p></li>
+<li><p>Add the following code to the Fish class's act method:</p></li>
+<div id="csCode" style="width:625px"><pre>
+if(Greenfoot.isKeyDown("f"))
+{
+   speed++;     // faster
+}
+
+if(Greenfoot.isKeyDown("s"))
+{
+   speed--;     // slower
+   if(speed < 0)   // no negative speeds
+      speed = 0;
+}
+</pre></div>
+<p>Compile and run the program. Press the "f" key to increase the fish's speed and press the "s" key to decrease its speed.</p>
+<p>There is a problem with this code. When a user presses the "f" key the speed of the fish is suppose to increase by one. Did you notice, however, that the speed
+   seemed to increase by alot more than that. The reason for this is because of the way the <strong>isKeyDown</strong> method works.  The method isKeyDown 
+   returns true while the key is pressed. If you hold down the "f" key the method continues to return true. This will cause the speed variable to be incremented several 
+   times before you release the key. To fix this problem we can use a different Greenfoot method named <strong>getKey</strong>.</p>
+   <li><p>Replace the code added in the previous step with the following code:</p></li>
+   
+   <div id="csCode" style="width:625px"><pre>
+String key = Greenfoot.<div id="csHighlight"><pre>getKey()</pre></div>;   // get name of last key that was pressed
+if(key != null && key.equals("f"))  
+{
+   speed++;    // faster
+}
+
+if(key != null && key.equals("s"))
+{
+   speed--;    // slower
+   if(speed < 0)  // no negatve speeds
+      speed = 0;
+}
+</pre></div>
+<p>The <strong>getKey</strong> method returns the name of the last key that was pressed. If more than one key was pressed, this method returns <strong>only the most recently pressed key</strong>.
+The method returns null if no keys were pressed because of this the if statements need to check to see if the value of key is not null</p>
+<div id="csCode" style="width:625px"><pre>if(<div id = "csHighlight"><pre>key != null</pre></div> && key.equals("f"))  
+{
+   speed++;    // faster
+}
+</pre></div>
+<p>Without this check the code would teminate with a runtime error if no key was pressed. There is, however, a trick you can do to eliminate the need for this check.
+   Look at the following code:</p>
+      <div id="csCode" style="width:625px"><pre>
+String key = Greenfoot.<div id="csHighlight"><pre>getKey()</pre></div>;   // get name of last key that was pressed
+if("f".equals(key))  
+{
+   speed++;    // faster
+}
+
+if("s".equals(key))
+{
+   speed--;    // slower
+   if(speed < 0)  // no negatve speeds
+      speed = 0;
+}
+</pre></div>
+<p>By flipping the strings in the equal statements the check for null is no longer necessary because the strings "f" and "s" exist.</p>
+</ol>
+
+	<br>
+</div>	
+

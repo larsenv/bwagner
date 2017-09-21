@@ -1,0 +1,73 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Spacing</div>
+
+<div id="csContent"> 
+
+  <p>To improve the look of the data being displayed on the console window you often want to include 
+     spacing to make the data easier to read. In a println statement this can be accomplished simply by
+	 adding one or more strings that contain the 'space' character.</p>
+	 
+<h3>Example 1</h3>
+  <div id="csCode">
+System.out.println(1 + " " + 2 + " " + 3 + " " + 4 + " " + 5);
+</div>
+<p>This code produces the following output</p>
+<div id="csOutput"><pre>1 2 3 4 5</pre></div>
+<p>The println statement includes 5 strings that contain one space character used to space the numbers apart. Notice the use of the
+plus '+' operator. Because these '+' operators are position next to a string their purpose has changed. 
+Instead of doing an add operation they do a merge or concatenation operation. When the '+' operator is used in
+this context it is referred to as the <strong>concatenation operator</strong>.</p>
+
+<div id="csNote">In a println statement any string that is positioned next to a literal value or variable (i.e. anything that is not a string)
+   must include the '+' concatentation operator between them. </div>
+   
+<h3>Example 2</h3>
+<div id="csCode"><pre>System.out.println(3 + " + " + 7 + " = " + (3 + 7));
+</pre></div>
+<p>This code has the following format</p>
+<div id="csOutput"><pre>number + string + number + string + number</pre></div>
+<P>and produces the following output</P>
+<div id="csCode"><pre>3 + 7 = 10</pre></div>
+<p>There two things you can learn from this example.</p>
+<div id="csList"><ol>
+<li>Any string in a println statement that is not at the beginning or the end of the statement must have a
+    '+' concatenation operator before and after it.</li>
+<li>Once a println statement encounters a '+' concatenation operator all '+' signs after the first automatically
+    become concatentation operators. To prevent a '+' add operation from turning into a concatention operator
+	you must wrap parentheses around it and its two operands. This works because in the order of operations
+	parentheses are evaluated first therefore the code (3 + 7) will evaluate to 10 before the rest of the
+	statement is evaluated.</li>
+</ol>
+</div>
+
+<h1>Directions</h1>
+<div id="csList"><ul>
+<li>Use the println statement to produce the output shown below. </li>
+<li>The println statement <strong>must</strong> do the math calculation at the end of each problem and display it. </li>
+<li>In this assignment no numbers are allowed
+   to be displayed as a string (i.e. "45").</li>
+   </ul></div>
+<h1>Source File</h1>
+<p>Spacing.java</p>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+          Simple Math
+-------------------------------
+5 + 10 = 15
+30 / 5 = 6
+50 + 20 - 6 * 3 = 52
+40 / (3 + 5) * 2 = 10
+
+The remainder when you divide 15 by 4 is 3.
+
+Jack had 3 pencils and Jill had 5. 
+Jack and Jill had 8 pencils.
+
+</pre>
+</div>
+	<br>
+</div>	
+
+

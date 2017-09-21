@@ -1,0 +1,45 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Mario</div>
+
+<div id="csContent"> 
+<h1>Download and Open Scenario</h1>
+<ol id="csList">
+<li><p>Click on the following link to download the scenario: <a href="greenfoot/scenarios/Mario.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >Mario</a></p></li>
+<li><p>Select <strong>Open</strong>.</p></li>
+<li><p>Copy the folder <strong>Mario</strong> and paste it in your <strong>myGreenfoot</strong> folder.</p></li>
+<li><p>Launch Greenfoot and select Open from the Scenario menu.</p></li>
+<li><p>Navigate to your MyGreenfoot folder, select the Mario scenario, and click Open.</p></li>
+</ol>
+<br>
+
+<p>In this lesson features of the <strong>AnimatedActor</strong> class are demonstrated by animating a Mario actor as he moves.</p>
+
+<h1>Mario Sprite Sheet</h1>
+<p>The mario sprite sheet consists of 20 frames. The first 10 frames are right facing and are numbered from 0 - 9. The second 10
+   frames are left facing and are numbered from 10 - 19. </p>
+   
+<div><img src="greenfoot/images/Mario_01.png"></div>
+
+<h1>Mario Class</h1>
+  <p>The Mario class's <strong>movementTest</strong> method is responsible for 
+    allowing a Mario object to move horizontally within the world. As a mario 
+    moves it is also animated using the sprite sheet frames. When he is moving 
+    right only frames 0 through 9 are used and when he is moving left only frames 
+    10 through 19 are used. The method movementTest is shown below. Study the 
+    code until you understand how it works.</p>
+ 
+ <div><img src="greenfoot/images/Mario_02.png"></div>  
+    
+<h1>Program Modifications</h1> 
+<ol id="csList">
+<li><p>Complete the method <strong>jumpTest</strong> so that Mario has the ability to jump and land on the ground. The ground is not an actor
+       instead it is part of the background image. The top of ground is located 320 pixels down from the top of the world.</p>
+	   
+	 <p>I have already included the instance variables necessary to implement jumping.</p></li>
+<li><p>Using the <strong>Platform</strong> class add a platform to the world and then give Mario the ability to land on it.</p></li>
+
+</ol>
+	<br>
+</div>	
+

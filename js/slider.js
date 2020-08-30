@@ -97,3 +97,10 @@ function doScrollTop()
 {
    document.getElementById('content').scrollTop = 0;
 }
+
+function getSolution(url)
+{
+	if (typeof(Storage) !== "undefined") {
+		window.sessionStorage.url = url;
+	}
+}

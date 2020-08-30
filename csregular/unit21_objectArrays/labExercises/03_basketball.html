@@ -47,8 +47,25 @@ public class Player
 <h3>Constructors</h3>
 <div id="csList">
 <ol start="8">
-<li>Implement a <strong>constructor</strong> which allows a client to assign initial values to all seven
-    instance variables.</li>
+<li>Add the following constructor<br>
+<div id="csCode" style="width:600px"><pre>public Player(String playerName, int ftm, int fta,
+              int fgm2, int fga2, int fgm3, int fga3)
+   {
+       this.playerName = playerName;
+       this.ftm = ftm;
+       this.fta = fta;
+       this.fgm2 = fgm2;
+       this.fga2 = fga2;
+       this.fgm3 = fgm3;
+       this.fga3 = fga3;
+   }</pre></div>
+<p>Notice the use of the keyword <strong>"this"</strong> in the body of the constructor. "this" is used to allow an object to refer to itself. I am using it here because I did not want to come up with different variable name for each of the 7 parameters. Look at the following code from above.</p>
+<div id="csCode" style="width:130px"><pre>this.ftm = ftm;</pre></div>
+<p>The "this" in the code is used to reference the variable ftm declared in the instance variable
+   section of the class. The ftm variable that does not use "this" refers to the parameter ftm which is a temporary local variable used to assign a value to the instance variable.
+</p>
+
+</li>
 </ol>
 </div>
 <h3>Accessor Methods</h3>
@@ -137,7 +154,7 @@ public class Team
 <h3>Instance Variables</h3>
 <div id="csList">
 <ol start="14">
-<li>Implement any necessary instance variables.</li>
+<li>Add any necessary instance variables.</li>
 </ol>
 </div>
 <h3>Constructors</h3>
@@ -226,6 +243,11 @@ Free Throws % = 100.0
 Total Points Scored = 52
 </pre>
 </div>
+
+<br><br>
+<img src="images/empty.gif" onload="getSolution('/csregular/unit21_objectArrays/solutions/03_basketballSolution.php'); this.parentNode.removeChild(this);" />
+<div><a href="/php/show_login.html" target="_blank" style="color:blue; font-size:1.5rem">Solution</a></div>
+
 	<br>
 </div>	
 

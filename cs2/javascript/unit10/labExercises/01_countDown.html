@@ -2,19 +2,30 @@
 
 <div id="csAssignmentTitle" align="center">10-1 Javascript Date</div>
 
-<div id="csContent"> 
-<h1>Chapters</h1>
-<ul id="csList">
-    <li><p><a href="http://www.w3schools.com/js/js_dates.asp" target="_blank" style="color:blue">Javascript Dates</a></p></li>
-    <li><p><a href="http://www.w3schools.com/js/js_date_formats.asp" target="_blank" style="color:blue">Javascript Date Formats</a></p></li>
-    <li><p><a href="http://www.w3schools.com/js/js_date_methods.asp" target="_blank" style="color:blue">Javascript Date Methods</a></p></li>
-    <li><p><a href="http://www.w3schools.com/js/js_timing.asp" target="_blank" style="color:blue">Javascript Timing Events</a></p></li>
-</ul>
-<h1>Lab Exercise</h1>
-<ol id="csList">
-<li><p>File Name: 10_1_countdown.</p></li>
-<li><p>Copy the following code:</p>
-    <div id="csOutput" style="width: 600px"><pre>
+<div id="csContent">
+    <h1>Chapters</h1>
+    <ul id="csList">
+        <li>
+            <p><a href="http://www.w3schools.com/js/js_dates.asp" target="_blank" style="color:blue">Javascript Dates</a></p>
+        </li>
+        <li>
+            <p><a href="http://www.w3schools.com/js/js_date_formats.asp" target="_blank" style="color:blue">Javascript Date Formats</a></p>
+        </li>
+        <li>
+            <p><a href="http://www.w3schools.com/js/js_date_methods.asp" target="_blank" style="color:blue">Javascript Date Methods</a></p>
+        </li>
+        <li>
+            <p><a href="http://www.w3schools.com/js/js_timing.asp" target="_blank" style="color:blue">Javascript Timing Events</a></p>
+        </li>
+    </ul>
+    <h1>Lab Exercise</h1>
+    <ol id="csList">
+        <li>
+            <p>File Name: 10_1_countdown.html</p>
+        </li>
+        <li>
+            <p>Copy the following code:</p>
+            <div id="csOutput" style="width: 600px"><pre>
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
     &lt;head&gt;
@@ -142,8 +153,23 @@
 
             function startCountDown()
             {
-                
+                 // Step 1
 
+                 // Step 2
+
+                 // Step 3
+
+                 // Step 4
+
+                 // Step 5
+
+                 // Step 6
+
+                 // Step 7
+
+                 // Step 8
+
+                 // Step 9
                 
             }
             
@@ -261,53 +287,67 @@
     &lt;/body&gt;
 &lt;/html&gt;
 </pre></div>
-</li>
-<li><p>Display the html file in a browser and test the visual components.</p></li>
-<li><p>When the user presses the <strong>Start Countdown</strong> button the page calls the function
-        <strong>startCountDown</strong> which instructs the browser to display a timer that includes
-    the number of days, hours, minutes, and seconds needed to reach the date specified in the three 
-    spinners.</p></li>
-<li><p>Complete the function <strong>startCountDown</strong>. </p>
-       <p>To complete the function follow these steps:</p>
-       <ul id="csList">
-           <li><p>Set the visibility attribute of the <strong>output</strong> div to <strong>visible</strong>.</p></li>
-        <li><p>Retrieve the values from the three spinners and store them in the variables
-               year, month, and day using the following code:</p>
-            <div id="csOutput" style="width:600px">
-           <pre>year = document.getElementById("year").value;
+        </li>
+        <li>
+            <p>Display the html file in a browser and test the visual components.</p>
+        </li>
+        <li>
+            <p>When the user presses the <strong>Start Countdown</strong> button the page calls the function
+                <strong>startCountDown</strong> which instructs the browser to display a timer that includes the number of days, hours, minutes, and seconds needed to reach the date specified in the three spinners.
+            </p>
+        </li>
+        <li>
+            <p>Complete the function <strong>startCountDown</strong>. </p>
+            <p>To complete the function follow these steps:</p>
+            <ol id="csList">
+                <li>
+                    <p>Set the visibility attribute of the <strong>output</strong> div to <strong>visible</strong>.</p>
+                </li>
+                <li>
+                    <p>Retrieve the values from the three spinners and store them in the global variables year, month, and day using the following code:</p>
+                    <div id="csOutput" style="width:600px">
+                        <pre>year = document.getElementById("year").value;
 month = document.getElementById("month").value - 1;  // javascript counts months starting
 day = document.getElementById("day").value;          // with 0. January = 0</pre>
-            </div>
-        </li>
-        <li><p>Create a Date object using the variables year, month, and day as arguments and store the 
-               its reference in the variable <strong>endtime</strong>.</p></li>
-        <li><p>Verify that the endTime is greater than the current time by using the following code:</p>
-            <div id="csOutput" style="width:600px"><pre>// check for invalid endTime
+                    </div>
+                </li>
+                <li>
+                    <p>Create a Date object using the variables year, month, and day as arguments and store the its reference in the global variable <strong>endtime</strong>.</p>
+                </li>
+                <li>
+                    <p>Verify that the endTime is greater than the current time by using the following code:</p>
+                    <div id="csOutput" style="width:600px"><pre>// check for invalid endTime
 if(Date.parse(new Date()) > endtime)
 {
     document.getElementById("error").style.visibility = "visible";
     document.getElementById("error").innerHTML = "Oops! Invalid ending date.";
     return;
 }</pre></div>
+                </li>
+                <li>
+                    <p>Set the visibility attribute of the <strong>error</strong> div to <strong>hidden</strong>.</p>
+                </li>
+                <li>
+                    <p>Make a call to the function <strong>storeEndTime()</strong>.</p>
+                </li>
+                <li>
+                    <p>Make a call to the function <strong>initializeClock("output", endtime)</strong> passing the string "output" and the variable endtime as arguments.</p>
+                </li>
+                <li>
+                    <p>Make a call to the function <strong>updateClock()</strong>.</p>
+                </li>
+                <li>
+                    <p>Assign the <strong>timeInterval</strong> variable a value using the following code:</p>
+                    <div id="csOutput" style="width:600px"><pre>var timeinterval = setInterval(updateClock,1000);</pre></div>
+
+                    <p>The method <strong>setInterval</strong> is a window method that can be used to set how often code is executed. The two arguments updateClock and 1000 tell the document to call the function updateClock every 1000 milliseconds(1000 milliseconds
+                        = 1 second). This is the code that allows the page to behave like a clock.</p>
+                </li>
+                </ul>
         </li>
-        <li><p>Set the visibility attribute of the <strong>error</strong> div to <strong>hidden</strong>.</p></li>
-        <li><p>Make a call to the function <strong>storeEndTime()</strong>.</p></li>
-        <li><p>Make a call to the function <strong>initializeClock("output", endtime)</strong> passing the string "output"
-                and the variable endtime as arguments.</p></li>
-        <li><p>Make a call to the function <strong>updateClock()</strong>.</p></li>
-        <li><p>Assign the <strong>timeInterval</strong> variable a value using the following code:</p>
-            <div id="csOutput" style="width:600px"><pre>var timeinterval = setInterval(updateClock,1000);</pre></div>
-            
-          <p>The method <strong>setInterval</strong> is a window method that can 
-            be used to set how often code is executed. The two arguments updateClock 
-            and 1000 tell the document to call the function updateClock every 
-            1000 milliseconds(1000 milliseconds = 1 second). This is the code 
-            that allows the page to behave like a clock.</p>
-        </li>
-    </ul>
-</li>
-</ol>
-<br><hr><br>
-<img src="images/javascript_countDown1.png" style="max-width:80%; max-height:80%">
-<br>
-</div>	
+        </ol>
+        <br>
+        <hr><br>
+        <img src="images/javascript_countDown1.png" style="max-width:80%; max-height:80%">
+        <br>
+</div>

@@ -27,66 +27,28 @@ end if
 </pre>
 </div>
 
-<p>Below is the array implementation of the merge sort algorithm.</p> 
+<p>Below is an array implementation of the insertion sort algorithm.</p> 
 <div id="csCode"><pre>
-void mergeSort(int[] a, int lo, int hi)
+void insertionSort(int numbers[])
 {
-   if (lo < hi)
-   {
-       int m = (lo + hi) / 2;
-       mergeSort (a, lo, m);
-       mergeSort (a, m+1, hi);
-       merge (a, lo, hi);
-   }
-}
+      int i, j, index;
 
-void merge(int[] a, int lo, int hi)
-{
-   int i, j, k, m;
-   int n=hi-lo+1;
-   int[] b=new int[n];           // temporary array
-            
-   k=0;
-   m=(lo+hi)/2;
-   // copy lower half to array b
-   for(i=lo; i<=m; i++)
-   {
-       b[k]=a[i];
-       k++;
-   }
-  // copy upper half to array b in opposite order
-   for (j=hi; j>=m+1; j--)
-   {
-       b[k]=a[j];
-       k++;
-   }
-        
-   i=0; 
-   j=n-1; 
-   k=lo;
-        
-   // copy back next-greatest element at each time
-   // until i and j cross
-   while (i<=j)
-   {
-      if (b[i]<=b[j])
+      for (i=1; i < numbers.length; i++)
       {
-         a[k]=b[i];
-         k++;
-         i++;
+         index = numbers[i];
+         j = i;
+         while ((j > 0) && (numbers[j-1] > index))
+         {
+            numbers[j] = numbers[j-1];
+            j = j - 1;
+         }
+         numbers[j] = index;
       }
-      else
-      {
-         a[k]=b[j];
-         k++;
-         j--;
-      }
-   }
 }
 </pre></div>
 
-<p>Modify the <strong>merge</strong> algorithm so that it can be used to sort the ArrayList
-   of states by population. You will need to use the following
+<p>Modify the <strong>insertion sort</strong> algorithm so that it can be used to sort the ArrayList
+   of States by population. You will need to use the following
 ArrayList methods in your implementation:</p>
    <div id="csList"><ul>
 <li>Object <strong>get</strong>(int index)</li> 
@@ -96,9 +58,7 @@ ArrayList methods in your implementation:</p>
 <div id="csList"><ul>
 <li>int <strong>compareTo</strong>(Object obj)</li> 
 </ul></div>
- 
-<p><strong>Note:</strong> The temporary array used in the merge method does not
-   have to be changed to an ArrayList, it can remain an array.</p>
+
 
 
 <h1>Sample Run</h1>

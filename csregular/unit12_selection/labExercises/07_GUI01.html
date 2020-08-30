@@ -68,7 +68,7 @@ public class GUI01 <font color="#FF0000">extends</font> JFrame</pre>
 	  the existing class. In doing this, you can use the methods of the existing class without having to
 	  write them yourself. </p>
    <p>Writing the code for your own frame window would be a very complex process. However, through
-      inheritance, it becomes fairly trival. All you have to do is extend or inherit the JFrame class
+      inheritance, it becomes fairly trivial. All you have to do is extend or inherit the JFrame class
 	  and your program automatically has the ability to create a frame window and you also have access
 	  to a whole list of methods that can be used to manipulate the attributes of the window. 
 	  In essence, your class becomes a JFrame class.</p>
@@ -97,7 +97,7 @@ public class <font color="#FF0000">GUI01</font> extends JFrame
       <div id="csCode">
     <pre>setLayout(null);</pre>
    </div>
- <p>The second JFrame method called within the contructor is <strong>setSize</strong>. This method 
+ <p>The second JFrame method called within the constructor is <strong>setSize</strong>. This method 
     sets the initial size of frame when it is displayed on the screen. The line of code below sets
     the dimension of the frame to 500 pixels across by 500 pixels down. The default size of a frame
     is (0,0) so you need to use this method to give your frame an initial size.</p>
@@ -105,7 +105,7 @@ public class <font color="#FF0000">GUI01</font> extends JFrame
     <pre>setSize(500, 500);</pre>
    </div>
    <p>The next JFrame method is <strong>setDefaultCloseOperation</strong>. This method is used to 
-      determine what happens to the prograrm when a user presses the "x" icon in the upper right hand
+      determine what happens to the program when a user presses the "x" icon in the upper right hand
 	  corner of your frame window. The line of code below causes the program to terminate when the "x" is
 	  pressed.</p>
 	  	<div id="csCode">
@@ -152,26 +152,19 @@ public static void main(String[] args)
 }
 </pre>
    </div>
-   <p>The code highlighted in red is a call made to the contructor method discussed above. When the
+   <p>The code highlighted in red is a call made to the constructor method discussed above. When the
       program is executed the constructor is called which builds the frame window and sets all of its
 	  attributes like size, color, etc.</p>
    <p>Every GUI program will have a main method similar to this one with the appropriate name.</p>
    <h1>Exercise</h1>
    <div id="csList">
    <ol>
-<li>Open your Computer Science workspace.</li>
+<li>Open your NetBeans workspace.</li>
 
-<li>Right-click on the Computer Science workspace icon and select <strong>Add New Project</strong>.</li>
+<li>Add a new empty Java file named <strong>GUI01</strong> to your project.</li>
 
-<li>Select <strong>Empty Project</strong> and click <strong>Next</strong>.</li>
+<li>Copy the code located at the top of the page into this new file.</li>
 
-<li>Name the project: <strong>GUI</strong> and select <strong>Finish</strong>.</li>
-
-<li>Right-click on your new GUI project icon and select <strong>Add-> New File</strong>.</li>
-
-<li>Name the file: <strong>GUI01</strong> and select <strong>Finish</strong>.</li>
-
-<li>Copy the code located at the top of the page into the new file.</li>
 </ol>
   </div> 
   <h1>Modifications</h1>

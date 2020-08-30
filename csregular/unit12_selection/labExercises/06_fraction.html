@@ -19,6 +19,51 @@
 <h3>Step 2: Stub Program</h3>
 <p>Create a stub program that includes all four methods. Include println statements within each
    method that prints the name of the method when it is executed.</p>
+   <div id="csCode"><pre>
+import java.util.*;
+public class Fraction 
+{
+    // Instance Variables
+
+    public void getProblem()
+    {
+        System.out.println("/*********************/");
+        System.out.println("      getProblem");
+        System.out.println("/*********************/");
+    }
+    
+    public void extractData()
+    {
+        System.out.println("/*********************/");
+        System.out.println("      extractData");
+        System.out.println("/*********************/");
+    }
+    
+    public void doArithmetic()
+    {
+        System.out.println("/*********************/");
+        System.out.println("      doArithmetic");
+        System.out.println("/*********************/");
+    }
+    
+    public void printResults()
+    {
+        System.out.println("/*********************/");
+        System.out.println("      printResults");
+        System.out.println("/*********************/");
+    }
+    
+    public static void main(String[] args) 
+    {
+        Fraction app = new Fraction();
+        app.getProblem();
+        app.extractData();
+        app.doArithmetic();
+        app.printResults();
+    }
+}
+</pre>
+</div>
 <h3>Step 3: Declare Variables</h3>
 <p>Declare the following instance variables.</p>
 <div id="csCode">
@@ -45,6 +90,7 @@ private int denomAns;      <font color="#FF00FF">// denominator portion of the a
 <p>The fraction problem is input into the program as a single string value. The extractData method
    uses the String class's substring method to extract the numerators, denominators, and operator
    from the problem so the arithmetic operation can be performed.</p>
+
    <p>Assume that a fraction problem is input using the following format:</p>
    
       <table id="csTable" style="margin: 0px">
@@ -71,7 +117,9 @@ private int denomAns;      <font color="#FF00FF">// denominator portion of the a
           <td style="background-color:#FFFFFF"> <div align="center"><font color="#FF0000">5</font></div></td>
         </tr>
       </table>
-   <p>To extract numerator 1 (2) from the problem you would use the following code</p>
+   <p>The value 2 above is the first numerator in the problem above. 
+      To extract this value from the problem, use the following code, which is explained in two parts:</p>
+   <h3>Part 1</h3>
    <div id="csCode">
     <pre>
 num1 = problem.<font color="#FF0000">substring</font>(0, 1);     <font color="#FF00FF">// extract 2 from problem </font></pre>
@@ -82,8 +130,9 @@ num1 = problem.<font color="#FF0000">substring</font>(0, 1);     <font color="#F
    to convert the substring into an integer value (ex. convert "2" into 2). To do this you are going to use another Java 
    library class named <strong>Integer</strong>. The Integer class has a method named <strong>parseInt</strong>
    that can do this job for us. The Integer class is similar to the Math class in that its methods are static,
-   therefore you don't need to create an object inorder to use them. The code segment above has
+   therefore you don't need to create an object in order to use them. The code segment above has
    been modified to include the parseInt method:</p>
+   <h3>Part 2</h3>
       <div id="csCode">
     <pre>
 num1 = Integer.<font color="#FF0000">parseInt</font>(problem.substring(0, 1));     <font color="#FF00FF">// converts "2" into 2 </font></pre>
@@ -96,9 +145,9 @@ num1 = Integer.<font color="#FF0000">parseInt</font>(problem.substring(0, 1));  
 	   Since operator is a String variable you will need to use the <strong>equals</strong> method to make the comparisons.</p>
 
 	<p><strong>Addition and Subtraction</strong></p>
-	<p>Normally when performing addition and subtraction fraction problems you need to determine a GCD 
-	  (Greatest Common Divisor). Unfortunately we have not covered the Java commands that would enable
-	  you to do perform this task, therefore you are going to use another technique called the
+	<p>Normally when performing addition and subtraction fraction problems you need to determine the LCM
+	  (Least Common Multiply). Unfortunately we have not covered the Java commands that would enable
+	  you to perform this task, therefore you are going to use another technique called the
 	  <strong>Butterfly Method</strong>. The following diagram illustrates this technique.</p>
      <img src="images/fraction2.png">
 	 <p>numerator answer = numerator 1 times denominator 2 plus denominator 1 times numerator 2.<br>

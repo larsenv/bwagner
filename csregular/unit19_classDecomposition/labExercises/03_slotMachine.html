@@ -95,7 +95,14 @@ private int getPayOff()
 public void displayResults()
 {
 
-}</pre>
+}
+
+// returns the amount of cash you current have
+public int getCash()
+{
+    return cash;
+}
+</pre>
 </div>
 
 <p><strong>Implement SlotMachine Methods</strong></p>
@@ -126,11 +133,12 @@ else
 	
 <li>Implement the method <strong>displayResults</strong>.This method displays
     the results of pulling the lever. Before the player can pull the lever they must
-	insert a dollar into the slotMachinel. This can be simulated by decreasing the 
+	insert a dollar into the slotMachine. This can be simulated by decreasing the 
 	<strong>cash</strong> variable by 1. If the rollers do not all match then there
 	is not a winner and the method should display the following message.<br><br>
 	<div id="csOutput"><pre>
 No winner. Please try again.
+cash = $ (new balance)
 	</pre></div>
 	If there is a winner the method should call the helper method <strong>getPayOff</strong> to 
 	determine the amount of the pay off. The player's cash balance need to increase by the
@@ -239,8 +247,12 @@ cash = $47
 
 1. Pull Lever 2. Quit -->2
 
-
 </pre>
 </div>
+<br><br>
+<img src="images/empty.gif" onload="getSolution('/csregular/unit19_classDecomposition/solutions/03_slotMachineSolution.php'); this.parentNode.removeChild(this);" />
+<div><a href="/php/show_login.html" target="_blank" style="color:blue; font-size:1.5rem">Solution</a></div>
+
+
 	<br>
 </div>

@@ -1,4 +1,4 @@
-<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+<img src="images/empty.gif" onload="initializeSortAnalyzer(); doScrollTop(); this.parentNode.removeChild(this);" />
 
 <div id="csHeader">Sorting Algorithms</div>
 	<div id="obj">
@@ -90,7 +90,7 @@
  
 
 <p>The two classes of sorting algorithms are <strong>O(n<sup>2</sup>)</strong> or quadratic complexity, which
-   includes the bubble, insertion, and selection; and <strong>O(n log n)</strong> which includes the merge
+   includes algorithms like the bubble, insertion, and selection sorts; and <strong>O(n log n)</strong> which includes algorithms like the merge
    and quick sorts.</p>
 
 <p>In addition to algorithmic complexity, the speed of the various sorts can be compared
@@ -102,7 +102,7 @@
 <h1>AP Correlation</h1>
 <p>Because of the large number of sorting algorithms available the AP Committee decided
    to limit the number of algorithms that a person taking the AP Exam is responsible for knowing
-   to only four. These four are listed below.</p>
+   to only three. These three are listed below.</p>
 
 <h3>Slow Sorts</h3>
 
@@ -110,8 +110,7 @@
 - Insertion Sort (n<sup>2</sup>)</p>
 
 <h3>Fast Sorts</h3>
-<p>- Merge Sort (n log n)<br>
-- Quick Sort (n log n)</p>
+<p>- Merge Sort (n log n)</p>
 
 <h1>IB Correlation</h1>
 <p>IB has limited their curriculum to only two sorts.</p>
@@ -133,21 +132,55 @@
    this occurs when the data to be sorted is in random order. It is possible that best, worst,
    and average cases don't differ much in their run times.</p>
 
-<p>Below is an applet that empirically tests the run-time efficiency of the different
+<p>Below is a javascript app that empirically tests the run-time efficiency of the different
    sorting algorithms. Each algorithm can be tested against the three cases: best case,
    worst case, and average case. For the best case we will examine the efficiency of the
    sorting algorithms when they sort an array that is already sorted. For the worst case
    we will examine them when they sort an array that is sorted in reverse order. For the 
    average case we will examine them when they sort an array that is in random order.</p> 
 
-        <applet code = "SortAnalyzerApplet.class" 
-		        codebase = "/applets"
-			    width="400" 
-				height="300" 
-				align="texttop" 
-				archive="SortAnalyzer.jar">
-        </applet>
+   <br><br>
+   <div id="SortAnalyzer" style="border: 2px solid black; font-size:1.2em; margin:auto; width:75%; padding:10px;">
+   <caption>Select Sorting Algorithm</caption>
+   <select id="sorts">
+         <option value="bubble">Bubble Sort</option>
+         <option value="selection">Selection Sort</option>
+         <option value="insertion">Insertion Sort</option>
+         <option value="merge">Merge Sort</option>
+         <option value="quick">Quick Sort</option>
+   </select>
+   <br><br>
+   <caption>Select Data Set Size</caption>
+   <select id="data">
+         <option value="100">100</option>
+         <option value="500">500</option>
+         <option value="1000">1000</option>
+         <option value="5000">5000</option>
+         <option value="10000">10,000 </option>
+         <option value="25000">25,000 </option>
+         <option value="50000">50,000</option>
+         <option value="75000">75,000</option>
+         <option value="100000">100,000</option>
+         <option value="250000">250,000</option>
+         <option value="500000">500,000</option>
+         <option value="1000000">1,000,000</option>
+         <option value="10000000">10,000,000</option>
+   </select>
+   <br><br>
+   <caption>Select Case Test</caption>
+   <select id="case">
+      <option value="average">Average</option>
+      <option value="worst">Worst</option>
+      <option value="best">Best</option>
+   </select>
+   <br><br>
+   <button id="myButton" onclick="goButtonHandler()" style="width:60px">Go</button>
+   <br>
+   <br>
 
+<h1>Time</h1>
+<div id="result"></div><br><br>
+</div>
 <br>
 <br>
 </div>	

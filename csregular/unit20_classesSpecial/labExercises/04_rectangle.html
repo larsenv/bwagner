@@ -95,8 +95,8 @@ Area = #
 <p>To display the perimeter and area of a rectangle call the getPerimeter and getArea methods from within the toString method.</p>
 <br><br>
 <h3>Client Program - RectangleManager class</h3>
-<p>The purpose of the RectangleManager class is to test the fuctionality of the MyRectangle class. To do this it
-   instantiates a MyRectangle object, allows the user to enter the length and width values for a rectangle, 
+<p>The purpose of the RectangleManager class is to test the functionality of the MyRectangle class. To do this it
+   allows the user to enter the length and width values for a rectangle, instantiates a MyRectangle object using the input values as parameters to the MyRectangle constructor,
    calculates the perimeter and area of the given rectangle, and then displays the results. It also
    provides the ability to change the dimensions of the rectangle.</p>
 <p>Create a file named <strong>RectangleManager.java</strong> and add the following code.</p>
@@ -157,19 +157,19 @@ public class RectangleManager
 <ol start="5">
 <li>Implement the  <strong>inputDimensions </strong> method. This method should prompt the user for the dimensions of a rectangle then 
    instantiate a MyRectangle object using the values input by the user as parameters to the 
-   constructor. The object's reference should be assigned to the variable rect.
+   constructor. The object's reference should be assigned to the variable <strong>rect</strong>.
 </li></ol></div>
 <h3>changeDimensions Method</h3>
 <div id="csList">
 <ol start="6">
 <li>Implement the <strong>changeDimensions </strong> method. This method should prompt the user for
     the new dimensions of a rectangle then use the MyRectangle class's <strong>mutator</strong> methods to update the length
-    and width values of rect.
+    and width values of <strong>rect</strong>.
 </li></ol></div>
 <h3>print Method</h3>
 <div id="csList">
 <ol start="7">
-<li>Implement the <strong>print</strong> method so that it will display rect's length, width, perimeter, and area.</li>
+<li>Implement the <strong>print</strong> method using the MyRectangle's <strong>toString</strong> method so that it will display rect's length, width, perimeter, and area.</li>
 </ol></div>
 <br>
 <h1>Source File</h1>
@@ -202,5 +202,10 @@ Area = 200
 
 </pre>
 </div>
+
+<br><br>
+<img src="images/empty.gif" onload="getSolution('/csregular/unit20_classesSpecial/solutions/04_myRectangleSolution.php'); this.parentNode.removeChild(this);" />
+<div><a href="/php/show_login.html" target="_blank" style="color:blue; font-size:1.5rem">Solution</a></div>
+
 	<br>
 </div>
